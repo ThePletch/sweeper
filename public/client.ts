@@ -1,11 +1,11 @@
-// client-side ts
+// client-side ts (compiles to client.js)
 // run by the browser each time your view template is loaded
 
 (function(){
   console.log('hello world :o');
   
   // our default array of dreams
-  const dreams = [
+  const dreams: string[] = [
     'Find and count some sheep',
     'Climb a really tall mountain',
     'Wash the dishes'

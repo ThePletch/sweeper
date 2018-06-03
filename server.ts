@@ -5,8 +5,6 @@
 import * as express from 'express';
 let app = express();
 
-declare let __dirname: string;
-
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -20,6 +18,5 @@ app.get('/', function (request: express.Request, response: express.Response) {
 
 // listen for requests :)
 let listener = app.listen(process.env.PORT, function() {
-  // console.log('Your app is listening on port ' + listener.address().port);
-  console.log('Your app is listening on port ' + 
+  console.log('Your app is listening on port ' + listener.address().port);
 });

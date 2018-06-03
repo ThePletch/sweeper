@@ -1,7 +1,55 @@
 dependencies:
+  '@types/express': 4.11.1
   express: 4.16.3
   typescript: 2.9.1
 packages:
+  /@types/body-parser/1.17.0:
+    dependencies:
+      '@types/connect': 3.4.32
+      '@types/node': 10.3.0
+    dev: false
+    resolution:
+      integrity: sha512-a2+YeUjPkztKJu5aIF2yArYFQQp8d51wZ7DavSHjFuY1mqVgidGyzEQ41JIVNy82fXj8yPgy2vJmfIywgESW6w==
+  /@types/connect/3.4.32:
+    dependencies:
+      '@types/node': 10.3.0
+    dev: false
+    resolution:
+      integrity: sha512-4r8qa0quOvh7lGD0pre62CAb1oni1OO6ecJLGCezTmhQ8Fz50Arx9RUszryR8KlgK6avuSXvviL6yWyViQABOg==
+  /@types/events/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-KEIlhXnIutzKwRbQkGWb/I4HFqBuUykAdHgDED6xqwXJfONCjF5VoE0cXEiurh3XauygxzeDzgtXUqvLkxFzzA==
+  /@types/express-serve-static-core/4.11.2:
+    dependencies:
+      '@types/events': 1.2.0
+      '@types/node': 10.3.0
+    dev: false
+    resolution:
+      integrity: sha512-5ukJmirhZqJh/jEDFn40GANZYtO95C7Pu3Xd9s8hHCtGhZORDVXiFtKLHKDE/s8T72Uvy4BZSTqsgFQMWGg/RA==
+  /@types/express/4.11.1:
+    dependencies:
+      '@types/body-parser': 1.17.0
+      '@types/express-serve-static-core': 4.11.2
+      '@types/serve-static': 1.13.2
+    dev: false
+    resolution:
+      integrity: sha512-ttWle8cnPA5rAelauSWeWJimtY2RsUf2aspYZs7xPHiWgOlPn6nnUfBMtrkcnjFJuIHJF4gNOdVvpLK2Zmvh6g==
+  /@types/mime/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-A2TAGbTFdBw9azHbpVd+/FkdW2T6msN1uct1O9bH3vTerEHKZhTXJUQXy+hNq1B0RagfU8U+KBdqiZpxjhOUQA==
+  /@types/node/10.3.0:
+    dev: false
+    resolution:
+      integrity: sha512-hWzNviaVFIr1TqcRA8ou49JaSHp+Rfabmnqg2kNvusKqLhPU0rIsGPUj5WJJ7ld4Bb7qdgLmIhLfCD1qS08IVA==
+  /@types/serve-static/1.13.2:
+    dependencies:
+      '@types/express-serve-static-core': 4.11.2
+      '@types/mime': 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-/BZ4QRLpH/bNYgZgwhKEh+5AsboDBcUdlBYgzoLX0fpj3Y2gp6EApyOlM3bK53wQS/OE1SrdSYBAbux2D1528Q==
   /accepts/1.3.5:
     dependencies:
       mime-types: 2.1.18
@@ -372,5 +420,6 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 7
 shrinkwrapVersion: 3
 specifiers:
+  '@types/express': ^4.11.1
   express: ^4.16.3
   typescript: ^2.9.1

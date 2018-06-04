@@ -17,7 +17,7 @@ app.get('/', (request: express.Request, response: express.Response) => {
 });
 
 // listen for requests :)
-const port: number = process.env.PORT || 3000;
+const port: string = process.env.PORT || '3000';
 app.listen(port, () => {
   console.log(`Your app is listening on port ${port}`);
 });

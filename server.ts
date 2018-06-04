@@ -3,7 +3,7 @@
 
 // init project
 import * as express from 'express';
-let app = express();
+const app: express.Application = express();
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -12,11 +12,12 @@ let app = express();
 app.use(express.static('public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get('/', function (request: express.Request, response: express.Response) {
+app.get('/', (request: express.Request, response: express.Response) => {
   response.sendFile(__dirname + '/views/index.html');
 });
 
 // listen for requests :)
-let listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+const port: number = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Your app is listening on port ${port}`);
 });

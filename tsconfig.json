@@ -3,13 +3,8 @@
     "module": "commonjs",
     "removeComments": true,
     "target": "es6",
-    "sourceMap":  true
+    "sourceMap": true
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

@@ -3,7 +3,7 @@
 
 // init project
 import * as express from "express";
-import { InteractionType } from 'discord-interactions';
+import { InteractionResponseType, InteractionType } from 'discord-interactions';
 
 const app: express.Application = express();
 
@@ -17,8 +17,15 @@ app.use(express.static("public"));
 app.post(
   "/interactions",
   (request: express.Request, response: express.Response) => {
-    if (req.body.type === InteractionType.APPLICATION_COMMAND)
-    response.sendFile(__dirname + "/views/index.html");
+    if (req.body.type === InteractionType.APPLICATION_COMMAND) {
+      const targetChannel = req.body.data.options.find((option) => option.name === 'channel').value;
+      response.send({
+        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+        data: {
+          content: ""
+        },
+      });
+    }
   }
 );
 

@@ -22,7 +22,7 @@ app.post(
       response.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          content: ""
+          content: "Summoning a portal to eeeeeee...",
         },
       });
     }

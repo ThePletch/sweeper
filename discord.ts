@@ -8,10 +8,24 @@ type RequestBody = {
 export class DiscordClient {
   constructor(private token: string) {}
 
-  sendMessage(channelId: string, message: string): Promise<Response> {
+  sendMessage(channelId: string, content: string): Promise<Response> {
     return this.request(`channels/${channelId}/messages`, "post", {
-      content: message,
+      content,
     });
+  }
+
+  updateMessage(
+    channelId: string,
+    messageId: string,
+    newContent: string
+  ): Promise<Response> {
+    return this.request(
+      `channels/${channelId}/messages/${messageId}`,
+      "patch",
+      {
+        content: newContent,
+      }
+    );
   }
 
   private request(

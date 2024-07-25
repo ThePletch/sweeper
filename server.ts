@@ -3,9 +3,9 @@
 
 // init project
 import * as express from "express";
-import { InteractionResponseType, InteractionType } from 'discord-interactions';
+import { InteractionResponseType, InteractionType } from "discord-interactions";
 
-import { DiscordClient } from './discord';
+import { DiscordClient } from "./discord";
 
 const app: express.Application = express();
 
@@ -22,7 +22,17 @@ app.post(
   "/interactions",
   (request: express.Request, response: express.Response) => {
     if (req.body.type === InteractionType.APPLICATION_COMMAND) {
-      const targetChannel = req.body.data.options.find((option) => option.name === 'channel').value;
+      const targetChannel = req.body.data.options.find(
+        (option) => option.name === "channel"
+      ).value;
+      client
+        .sendMessage(
+          targetChannel,
+          `A portal is being formed... \n :portal: :arrow_right: #sneebs`
+        )
+        .then((targetChannelPortalResponse) => {
+        
+      });
       response.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {

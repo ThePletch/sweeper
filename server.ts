@@ -3,6 +3,8 @@
 
 // init project
 import * as express from "express";
+import { InteractionType } from 'discord-interactions';
+
 const app: express.Application = express();
 
 // we've started you off with Express,
@@ -12,9 +14,13 @@ const app: express.Application = express();
 app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request: express.Request, response: express.Response) => {
-  response.sendFile(__dirname + "/views/index.html");
-});
+app.post(
+  "/interactions",
+  (request: express.Request, response: express.Response) => {
+    if (req.body.type === InteractionType.APPLICATION_COMMAND)
+    response.sendFile(__dirname + "/views/index.html");
+  }
+);
 
 // listen for requests :)
 const port: string = process.env.PORT || "3000";

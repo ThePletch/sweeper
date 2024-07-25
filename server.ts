@@ -5,6 +5,8 @@
 import * as express from "express";
 import { InteractionResponseType, InteractionType } from 'discord-interactions';
 
+import { DiscordClient } from './discord';
+
 const app: express.Application = express();
 
 // we've started you off with Express,
@@ -12,6 +14,8 @@ const app: express.Application = express();
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
+
+const client = DiscordClient(process.env.DISCORD_TOKEN);
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.post(

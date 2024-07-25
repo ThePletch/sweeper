@@ -1,19 +1,30 @@
-import https from "https";
+const DISCORD_URL = "https://discord.com/api";
 
-const DISCORD_URL = "";
+type RequestMethod = "get" | "post" | "put" | "patch" | "delete";
+type RequestBody = {
+  [key: string]: string;
+};
 
-class DiscordApi {
+export class DiscordClient {
   constructor(private token: string) {}
+
+  sendMessage(channelId: string, message: string): Promise<Response> {
+    return this.request(`channels/${channelId}/messages`, "post", {
+      content: message,
+    });
+  }
 
   private request(
     path: string,
-    type: "get" | "post" | "put" | "patch" | "delete"
-  ): Response {
-    return https.request(
-      type,
-      new URL(path, DISCORD_URL).href,
-      this.headers(),
-    );
+    method: RequestMethod,
+    body: RequestBody | null = null
+  ): Promise<Response> {
+    return fetch(new URL(path, DISCORD_URL), {
+      method,
+      headers: {
+        Authorization: `Bot ${this.token}`,
+      },
+      body: JSON.stringify(body),
+    });
   }
-  sendMessage;
 }

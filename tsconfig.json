@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "removeComments": true,
+    "module": "node16",
+    "moduleResolution": "node16",
     "target": "es6",
     "sourceMap": true
   },

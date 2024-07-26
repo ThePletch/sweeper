@@ -1,27 +1,7 @@
-Welcome to Glitch
-=================
+# Channel Sweeper
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+A simple discord bot that sweeps discussions to another channel while providing a link between the discussions for continuity.
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
-
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-
-Made by [Fog Creek](https://fogcreek.com/)
--------------------
-
-\ ゜o゜)ノ
+MVP features still to add:
+* RBAC (so servers can make the sweep command restricted to certain user groups)
+* Error handling for trying to sweep into channels the bot can't see

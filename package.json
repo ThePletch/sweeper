@@ -1,7 +1,4 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
   "name": "channel-sweeper",
   "version": "0.0.1",
   "description": "A Node backend for a Discord bot to sweep discussions between channels.",
@@ -24,12 +21,11 @@
   },
   "type": "module",
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-typescript"
+    "url": "https://github.com/ThePletch/sweeper"
   },
   "license": "MIT",
   "keywords": [
     "node",
-    "glitch",
-    "express"
+    "discord"
   ]
 }

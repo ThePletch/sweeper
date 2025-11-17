@@ -1,4 +1,5 @@
 import type { APIMessage, RESTPutAPIApplicationCommandsJSONBody } from 'discord-api-types/v10';
+import 'dotenv/config';
 import fetch from 'node-fetch';
 
 const DISCORD_URL = "https://discord.com/api/v10";
@@ -75,8 +76,16 @@ export class DiscordClient {
         'User-Agent': 'DiscordBot (shay-channel-sweeper, 1.0.0)',
       },
       body: JSON.stringify(body),
+
     });
 
-    return response.json() as Promise<ResponseType>;
+    if (response.ok) {
+      return response.json() as Promise<ResponseType>;
+    }
+
+    return Promise.reject({
+      status: response.status,
+      text: response.statusText,
+    });
   }
 }

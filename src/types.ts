@@ -1,9 +1,9 @@
 import express from "express";
 import nacl from "tweetnacl";
 
-import { DiscordClient, messageLink } from "./discord.js";
-import {
-  type APIChatInputApplicationCommandGuildInteraction,
+import type { DiscordClient, messageLink } from "./discord.js";
+import type {
+  APIChatInputApplicationCommandGuildInteraction,
   ApplicationCommandOptionType,
   InteractionResponseType,
   InteractionType,

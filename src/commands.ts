@@ -19,6 +19,17 @@ export const commands: CommandRegistry = {
       const targetChannel = interaction.data.options.find(
         (option) => option.type === ApplicationCommandOptionType.Channel
       ).value;
+
+      if (originChannel === targetChannel) {
+        response.send({
+          type: InteractionResponseType.ChannelMessageWithSource,
+          data: {
+            content: "You're already having the discussion in this channel, dingus."
+          }
+        });
+        return;
+      }
+
       response.send({
         type: InteractionResponseType.ChannelMessageWithSource,
         data: {
@@ -32,6 +43,7 @@ export const commands: CommandRegistry = {
           `Sweeping a discussion in here... 🧹`
         )
         .then(async (message) => {
+          console.log(message);
           const link = messageLink(
             interaction.guild_id,
             targetChannel,
@@ -51,6 +63,20 @@ export const commands: CommandRegistry = {
             targetChannel,
             message.id,
             `Discussion incoming! 🛬\nOrigin: ${originLink}`
+          );
+        }).catch((rejection) => {
+          if (rejection.status === 403) {
+            return discordClient.updateInteractionResponse(
+              interaction.application_id,
+              interaction.token,
+              "⛔ I can't see that channel. Make sure the bot has access to it and try again.",
+            );
+          }
+
+          return discordClient.updateInteractionResponse(
+            interaction.application_id,
+            interaction.token,
+            "💥 Couldn't sweep. Not sure what happened. Check the logs.",
           );
         });
     }

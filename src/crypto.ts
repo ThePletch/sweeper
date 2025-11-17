@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import type { Request, RequestHandler }  from 'express';
 import nacl from "tweetnacl";
 

@@ -9,12 +9,15 @@
   },
   "dependencies": {
     "discord-api-types": "^0.37.93",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "node-fetch": "^3.3.2",
-    "typescript": "^5.5.4",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
     "@types/express": "^4.17.21",
-    "tweetnacl": "^1.0.3",
-    "@types/node": "^16.18.104"
+    "@types/node": "^16.18.104",
+    "typescript": "^5.5.4"
   },
   "engines": {
     "node": "16.x"
